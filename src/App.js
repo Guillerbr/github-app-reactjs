@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const Profile = ({ user }) => (
+
+  <div>
+    <div className="row">
+      <div className="col-md-4">
+        <div className="card" style={{ width: '18rem' }}>
+          <img className="card-img-top" src={user.avatar_url} />
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item">
+              Repositorios:
+                                <span className="badge badge-sucess">{user.public_repos}</span>
+            </li>
+            <li className="list-group-item">
+              Seguidores:
+             <span className="badge badge-primary">{user.followers}</span>
+            </li>
+            <li className="list-group-item">
+              Seguindo:
+             <span className="badge badge-info">{user.following}</span>
+            </li>
+          </ul>
+          <div className="card-body">
+            <a href={user.html_url} className="btn btn-success btn-block">
+              Ver perfil
+                        </a>
+
+          </div>
+        </div>
+      </div>
     </div>
-  );
-}
+  </div>
 
-export default App;
+);
+
+export default Profile;
