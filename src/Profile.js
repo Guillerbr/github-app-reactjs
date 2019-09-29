@@ -11,7 +11,7 @@ const Profile = ({ user }) => (
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item">
                             Repositorios:
-                                <span className="badge badge-sucess">{user.public_repos}</span>
+                                <span className="badge badge-success">{user.public_repos}</span>
                         </li>
                         <li className="list-group-item">
                             Seguidores:
@@ -20,6 +20,10 @@ const Profile = ({ user }) => (
                         <li className="list-group-item">
                             Seguindo:
              <span className="badge badge-info">{user.following}</span>
+                        </li>
+             <li className="list-group-item">
+                            Criado em:
+             <span className="badge badge-info">{user.created_at}</span>
                         </li>
                     </ul>
                     <div className="card-body">
